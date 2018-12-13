@@ -1,14 +1,13 @@
-package com.example.jurassic_park.models.dinosaur;
+package com.example.jurassic_park.models;
 
 import com.example.jurassic_park.enums.DinoType;
 import com.example.jurassic_park.models.Paddock;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
 @Entity
-@Table
-public abstract class Dinosaur {
+@Table(name = "dinosaurs")
+public class Dinosaur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +25,11 @@ public abstract class Dinosaur {
     @Column(name="Type")
     private DinoType dinoType;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="paddock_id", nullable = false)
     private Paddock paddock;
 
-    public Dinosaur(String species, int weight, int height, DinoType dinoType) {
+    public Dinosaur(String species, int weight, int height, DinoType dinoType, Paddock paddock) {
         this.species = species;
         this.weight = weight;
         this.height = height;
@@ -64,6 +62,14 @@ public abstract class Dinosaur {
 
     public Paddock getPaddock() {
         return paddock;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPaddock(Paddock paddock) {
+        this.paddock = paddock;
     }
 
     public void setSpecies(String species) {

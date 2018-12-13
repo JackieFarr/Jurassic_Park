@@ -1,9 +1,19 @@
 package com.example.jurassic_park.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="visitors")
 public class Visitor {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "age")
     private int age;
 
     public Visitor(String name, int age) {
@@ -12,6 +22,10 @@ public class Visitor {
     }
 
     public Visitor() {
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getId() {

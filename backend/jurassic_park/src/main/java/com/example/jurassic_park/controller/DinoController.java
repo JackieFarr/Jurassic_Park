@@ -1,6 +1,6 @@
 package com.example.jurassic_park.controller;
 
-import com.example.jurassic_park.models.dinosaur.Dinosaur;
+import com.example.jurassic_park.models.Dinosaur;
 import com.example.jurassic_park.repository.dinosaurs.DinosaurRepository;
 import com.example.jurassic_park.repository.paddocks.PaddockRepository;
 import org.springframework.beans.factory.annotation.Autowired;

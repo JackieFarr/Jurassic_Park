@@ -1,13 +1,14 @@
 package com.example.jurassic_park.models;
 
-import com.example.jurassic_park.enums.DinoType;
 import com.example.jurassic_park.enums.PaddockType;
-import com.example.jurassic_park.models.dinosaur.Dinosaur;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "paddocks")
 public class Paddock {
 
     @Id
@@ -20,22 +21,26 @@ public class Paddock {
     @Column(name="capacity")
     private int capacity;
 
-    @Column(name="dinosaurs")
+    @Column(name="paddock_type")
     private PaddockType paddockType;
 
-
+    @JsonIgnore
     @Column
-    @OneToMany(mappedBy = "dinosaur", fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "paddock", fetch=FetchType.LAZY)
     private List<Dinosaur> dinosaurs;
 
     public Paddock(String name, int capacity, PaddockType paddockType) {
         this.name = name;
         this.capacity = capacity;
-        dinosaurs = new ArrayList<Dinosaur>();
-        paddockType = paddockType;
+        this.paddockType = paddockType;
+        this.dinosaurs = new ArrayList<>();
     }
 
     public Paddock() {
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getId() {

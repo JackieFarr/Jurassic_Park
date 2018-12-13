@@ -2,8 +2,8 @@ package com.example.jurassic_park.components;
 
 import com.example.jurassic_park.enums.DinoType;
 import com.example.jurassic_park.enums.PaddockType;
+import com.example.jurassic_park.models.Dinosaur;
 import com.example.jurassic_park.models.Paddock;
-import com.example.jurassic_park.models.dinosaur.*;
 import com.example.jurassic_park.repository.dinosaurs.DinosaurRepository;
 import com.example.jurassic_park.repository.paddocks.PaddockRepository;
 import com.example.jurassic_park.repository.visitors.VisitorRepository;
@@ -34,20 +34,14 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        TyrannosaurusRex trex1 = new TyrannosaurusRex(10000, 40, DinoType.CARNIVORE);
-        dinosaurRepository.save(trex1);
-
-        Diplodocus dipli1 = new Diplodocus(9000, 16, DinoType.HERBIVORE);
-        dinosaurRepository.save(dipli1);
-
-        Brachiosaurus brach1 = new Brachiosaurus(8000, 10, DinoType.HERBIVORE);
-        dinosaurRepository.save(brach1);
-
-        Pterodactyl pter1 = new Pterodactyl(2000, 4, DinoType.FLYING);
-        dinosaurRepository.save(pter1);
-
-        Sarcosuchus sar1 = new Sarcosuchus(1000, 2, DinoType.AQUATIC);
-        dinosaurRepository.save(sar1);
+        DateFormat sfd = new SimpleDateFormat("dd-MM-yy");
+        String newDate = "24-07-2018";
+        Date date = null;
+        try {
+            date = sfd.parse(newDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         Paddock goldblumGreen = new Paddock("Goldblum Green", 5, PaddockType.LAND);
         paddockRepository.save(goldblumGreen);
@@ -60,6 +54,23 @@ public class DataLoader implements ApplicationRunner {
 
         Paddock cage1 = new Paddock("Alan's Aviary", 12, PaddockType.BIRDCAGE);
         paddockRepository.save(cage1);
+
+        Dinosaur Tommy = new Dinosaur( "Tyrannesaurus Rex", 10000, 40, DinoType.CARNIVORE, goldblumGreen);
+        dinosaurRepository.save(Tommy);
+
+        Dinosaur Dippy = new Dinosaur("Diplodocus", 9000, 16, DinoType.HERBIVORE, hammondHill);
+        dinosaurRepository.save(Dippy);
+
+        Dinosaur Zack = new Dinosaur("Brachiosaurus", 8000, 10, DinoType.HERBIVORE, hammondHill);
+        dinosaurRepository.save(Zack);
+
+        Dinosaur Peter = new Dinosaur("Pterodactyl", 2000, 4, DinoType.FLYING, cage1);
+        dinosaurRepository.save(Peter);
+
+        Dinosaur Sara = new Dinosaur("Sarcosuchus", 1000, 2, DinoType.AQUATIC, lake);
+        dinosaurRepository.save(Sara);
+
+
 
     }
 }

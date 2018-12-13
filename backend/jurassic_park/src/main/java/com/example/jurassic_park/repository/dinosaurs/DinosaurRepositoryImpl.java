@@ -1,7 +1,6 @@
 package com.example.jurassic_park.repository.dinosaurs;
 
-import com.example.jurassic_park.models.Paddock;
-import com.example.jurassic_park.models.dinosaur.Dinosaur;
+import com.example.jurassic_park.models.Dinosaur;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
