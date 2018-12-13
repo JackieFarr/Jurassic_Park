@@ -1,4 +1,9 @@
 package com.example.jurassic_park.repository.visitors;
 
-public interface VisitorRepository {
+import com.example.jurassic_park.models.Visitor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface VisitorRepository extends JpaRepository<Visitor, Long>, VisitorRepositoryCustom {
 }

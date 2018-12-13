@@ -4,16 +4,29 @@ import com.example.jurassic_park.enums.DinoType;
 import com.example.jurassic_park.enums.PaddockType;
 import com.example.jurassic_park.models.dinosaur.Dinosaur;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Paddock {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="name")
     private String name;
+
+    @Column(name="capacity")
     private int capacity;
-    private List<Dinosaur> dinosaurs;
+
+    @Column(name="dinosaurs")
     private PaddockType paddockType;
+
+
+    @Column
+    @OneToMany(mappedBy = "dinosaur", fetch=FetchType.LAZY)
+    private List<Dinosaur> dinosaurs;
 
     public Paddock(String name, int capacity, PaddockType paddockType) {
         this.name = name;
