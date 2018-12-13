@@ -1,4 +1,36 @@
 package com.example.jurassic_park.models;
 
-public class visitor {
+public class Visitor {
+
+    private Long id;
+    private String name;
+    private int age;
+
+    public Visitor(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Visitor() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 }

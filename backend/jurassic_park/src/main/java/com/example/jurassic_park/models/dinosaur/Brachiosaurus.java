@@ -1,4 +1,10 @@
 package com.example.jurassic_park.models.dinosaur;
 
-public class Brachiosaurus {
+import com.example.jurassic_park.enums.DinoType;
+
+public class Brachiosaurus extends Dinosaur{
+
+    public Brachiosaurus(int weight, int height, DinoType dinoType) {
+        super("Brachiosaurus", weight, height, dinoType);
+    }
 }
