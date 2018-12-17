@@ -12,7 +12,7 @@ const DinosaurDetail = (props) => {
   }
 
   return (
-  
+
     <React.Fragment>
     <p>Weight: {props.dinosaur.weight} pounds</p>
     <p>Height: {props.dinosaur.height} m</p>

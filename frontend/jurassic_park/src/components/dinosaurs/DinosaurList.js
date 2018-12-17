@@ -14,10 +14,12 @@ const DinosaurList = (props) => {
 		})
 
 	return (
+		<React.Fragment>
+		<button>Add Dinosaur</button>
 		<ul className="component-list">
 	    {dinosaurs}
 	  </ul>
-
+		</React.Fragment>
 	)
 }
  export default DinosaurList;

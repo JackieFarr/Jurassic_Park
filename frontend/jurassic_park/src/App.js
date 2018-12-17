@@ -46,8 +46,6 @@ class App extends Component {
             return <SinglePaddockContainer id = {id} />
             }}
           />
-
-
             </Switch>
           </React.Fragment>
       </Router>

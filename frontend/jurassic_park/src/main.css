@@ -24,7 +24,7 @@ body {
   font-size: 20px;
   float: left;
   text-align: center;
-  margin-left: 180px;
+  margin-left: 100px;
   border: 1px solid red;
   border-radius: 15px;
 }
@@ -33,7 +33,7 @@ body {
   display: inline-block;
   overflow: hidden;
   list-style-type: none;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
 }
 
@@ -42,15 +42,16 @@ body {
     color: white;
     text-align: center;
     text-decoration: none;
-    padding: 20px;
+    padding: 3px;
     font-family: 'PHOSPHATE';
+    color: black;
 }
 
 /* Change the color of links on hover */
 li a:hover {
   background-color: red;
   border: 1px solid red;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 /* Add a color to the active/current link */
@@ -58,20 +59,20 @@ li a:hover {
   color: black;
   background-color: white;
   border: 1px solid white;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 .tagline {
   float: left;
   font-family: 'PHOSPHATE';
-  color: white;
+  color: black;
   font-size: 30px;
 }
 
 .visitor-count {
   float: right;
   font-family: 'PHOSPHATE';
-  color: white;
+  color: black;
   font-size: 30px;
 }
 

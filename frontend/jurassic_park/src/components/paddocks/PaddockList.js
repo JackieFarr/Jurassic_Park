@@ -14,10 +14,13 @@ const PaddockList = (props) => {
 		})
 
 	return (
+		<React.Fragment>
+		<button>Add Paddock</button>
+
 		<ul className="component-list">
 	    {paddocks}
 	  </ul>
-
+		</React.Fragment>
 	)
 }
  export default PaddockList;

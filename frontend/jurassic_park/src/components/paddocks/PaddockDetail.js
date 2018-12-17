@@ -1,7 +1,7 @@
 import React  from 'react';
 import {Link} from 'react-router-dom';
 
-const PaddockDetails = (props) => {
+const PaddockDetail = (props) => {
 
   const onDelete = () => {
     props.handleDelete(props.paddock.id);
@@ -13,7 +13,7 @@ const PaddockDetails = (props) => {
 
   return (
     <React.Fragment>
-    <h1> {props.paddock.capacity} </h1>
+    <h1> {props.paddock.name} </h1>
     <p>Capacity: {props.paddock.capacity}</p>
     <p>PaddockType: {props.paddock.paddockType}</p>
 
@@ -23,4 +23,4 @@ const PaddockDetails = (props) => {
   )
 }
 
-export default PaddockDetails;
+export default PaddockDetail;

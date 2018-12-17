@@ -36,7 +36,6 @@ class SingleDinosaurContainer extends Component {
     window.location = '/dinosaurs/edit/' + this.props.id
   }
 
-
   render(){
     if(!this.state.dinosaur){
       return null;

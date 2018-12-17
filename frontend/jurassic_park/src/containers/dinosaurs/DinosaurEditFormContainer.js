@@ -5,7 +5,7 @@ import DinosaurEditForm from '../../components/dinosaurs/DinosaurEditForm'
 class DinosaurEditFormContainer extends Component {
   constructor(props){
     super(props);
-    this.state = {paddocks: null, dinosaur: null};
+    this.state = {paddocks: null, dinosaur: null, dinosaurs: []};
     this.handleDinosaurEdit = this.handleDinosaurEdit.bind(this);
   }
 
@@ -14,8 +14,12 @@ class DinosaurEditFormContainer extends Component {
     request.get("http://localhost:8080/api/paddocks").then((paddocks) => {
       this.setState({paddocks: paddocks._embedded.paddocks})
     });
-    request.get("http://localhost:8080/api/dinosaurs/" + this.props.id + "?projection=embedPaddock").then((dinosaur) => {
+    request.get("http://localhost:8080/api/dinosaurs/" + this.props.id).then((dinosaur) => {
       this.setState({dinosaur: dinosaur})
+    });
+
+    request.get("http://localhost:8080/api/dinosaurs").then((dinosaurs) => {
+      this.setState({dinosaurs: dinosaurs._embedded.dinosaurs})
     });
   }
 
@@ -31,6 +35,7 @@ class DinosaurEditFormContainer extends Component {
       return <h1>loading</h1>;
     }
     return <DinosaurEditForm
+    dinosaurs = {this.state.dinosaurs}
     paddocks = {this.state.paddocks}
     dinosaur={this.state.dinosaur}
     handleDinosaurEdit= {this.handleDinosaurEdit}
