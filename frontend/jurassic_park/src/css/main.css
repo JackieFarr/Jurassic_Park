@@ -1,0 +1,82 @@
+body {
+  background-color: black;
+}
+
+/* .topNav {
+  background-color: black;
+} */
+
+.background-img {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+
+}
+
+.line-break {
+  /* margin: 25px 0; */
+  height: 1px;
+  /* padding-bottom: 15px; */
+  border-bottom: red 5px solid;
+}
+
+.topNav li {
+  font-size: 20px;
+  float: left;
+  text-align: center;
+  margin-left: 180px;
+  border: 1px solid red;
+  border-radius: 15px;
+}
+
+.topNav ul {
+  display: inline-block;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 10px;
+  text-align: center;
+}
+
+.topNav a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    font-family: 'PHOSPHATE';
+}
+
+/* Change the color of links on hover */
+li a:hover {
+  background-color: red;
+  border: 1px solid red;
+  border-radius: 15px;
+}
+
+/* Add a color to the active/current link */
+.topnav li.active {
+  color: black;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+.tagline {
+  float: left;
+  font-family: 'PHOSPHATE';
+  color: white;
+  font-size: 30px;
+}
+
+.visitor-count {
+  float: right;
+  font-family: 'PHOSPHATE';
+  color: white;
+  font-size: 30px;
+}
+
+.center {
+  display: block;
+   margin-left: auto;
+   margin-right: auto;
+}

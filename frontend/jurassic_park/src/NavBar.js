@@ -1,11 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './css/main.css';
+// import '/index.css';
 
 const NavBar = (props) => {
   return (
-    <header>
-    <img src ="images/jurassic-park-logo.png" height="200" alt="logo"/>
-    <h2 class="tagline"> Life finds a way... </h2>
+    <header className="topNav">
+    <h2 className="tagline"> Life finds a way . . . </h2>
+    <h2 className="visitor-count">Current Visitors : 2 , 6 4 5 </h2>
+    <img src ="images/jurassic-park-logo.png" height="200" alt="logo" className="center"/>
+
     <ul>
     <li className="navLink">
     <Link to="/dinosaurs">Dinosaurs</Link>
@@ -20,7 +24,10 @@ const NavBar = (props) => {
     <Link to="/staff">Staff</Link>
     </li>
     </ul>
+    <div className="line-break"></div>
     </header>
+
+
   )
 }
 
