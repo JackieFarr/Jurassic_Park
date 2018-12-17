@@ -1,13 +1,5 @@
 class Request {
 
-  // get(url) {
-  //   return fetch(url)
-  //   .then((res) => res.json());
-  //   .then(res => res.text())          // convert to plain text
-  //   .then(text => console.log(text))
-  // }
-
-
   get(url) {
     return fetch(url)
     .then((res) => res.json());

@@ -12,14 +12,14 @@ class PaddockFormContainer extends Component {
 
   componentDidMount(){
     const request = new Request();
-    request.get("/api/dinosaurs").then((data) => {
+    request.get("http://localhost:8080/api/dinosaurs").then((data) => {
       this.setState({dinosaurs: data._embedded.dinosaurs})
     })
   }
 
   handlePaddockPost(paddock){
     const request = new Request();
-    request.post('/api/paddocks', paddock).then(() => {
+    request.post('http://localhost:8080/api/paddocks', paddock).then(() => {
       window.location = '/paddocks'
     })
 

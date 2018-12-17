@@ -46,9 +46,7 @@ class App extends Component {
             return <SinglePaddockContainer id = {id} />
             }}
           />
-          <body>
-          <img src="images/dino2.jpg" className="background-img"/>
-          </body>
+
 
             </Switch>
           </React.Fragment>

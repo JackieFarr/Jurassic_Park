@@ -11,17 +11,17 @@ class DinosaurEditFormContainer extends Component {
 
   componentDidMount(){
     const request = new Request();
-    request.get("/api/paddocks").then((paddocks) => {
+    request.get("http://localhost:8080/api/paddocks").then((paddocks) => {
       this.setState({paddocks: paddocks._embedded.paddocks})
     });
-    request.get("/api/dinosaurs/" + this.props.id + "?projection=embedPaddock").then((dinosaur) => {
+    request.get("http://localhost:8080/api/dinosaurs/" + this.props.id + "?projection=embedPaddock").then((dinosaur) => {
       this.setState({dinosaur: dinosaur})
     });
   }
 
-  handlePirateEdit(dinosaur){
+  handleDinosaurEdit(dinosaur){
     const request = new Request();
-    request.patch('/api/dinosaurs/' + this.props.id, dinosaur).then(() => {
+    request.patch('http://localhost:8080/api/dinosaurs/' + this.props.id, dinosaur).then(() => {
       window.location = '/dinosaurs/' + this.props.id
     })
   }

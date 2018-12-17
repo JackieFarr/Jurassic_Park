@@ -9,7 +9,7 @@ const DinosaurForm = (props) => {
         "species": event.target.species.value,
         "height": event.target.height.value,
         "weight": event.target.weight.value,
-        "paddock": event.target.paddock.value,
+        "paddock": event.target.paddock.name.value,
 
       }
     props.handleDinosaurPost(dinosaur)

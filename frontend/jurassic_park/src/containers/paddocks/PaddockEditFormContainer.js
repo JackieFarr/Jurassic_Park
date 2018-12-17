@@ -11,14 +11,14 @@ class PaddockEditFormContainer extends Component {
 
   componentDidMount(){
     const request = new Request();
-    request.get("/api/paddocks/" + this.props.id + "?projection=embedDinosaur").then((paddock) => {
+    request.get("http://localhost:8080/api/paddocks/" + this.props.id + "?projection=embedDinosaur").then((paddock) => {
       this.setState({paddock: paddock})
     });
   }
 
   handlePaddockEdit(paddock){
     const request = new Request();
-    request.patch('/api/paddocks/' + this.props.id, paddock).then(() => {
+    request.patch('http://localhost:8080/api/paddocks/' + this.props.id, paddock).then(() => {
       window.location = '/paddocks/' + this.props.id
     })
   }

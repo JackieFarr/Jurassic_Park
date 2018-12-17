@@ -11,7 +11,7 @@ class DinosaurListContainer extends Component {
 
   componentDidMount(){
     let request = new Request()
-    request.get('/api/dinosaurs').then((data) => {
+    request.get('http://localhost:8080/api/dinosaurs').then((data) => {
       this.setState({dinosaurs: data._embedded.dinosaurs})
     })
   }

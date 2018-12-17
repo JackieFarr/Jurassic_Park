@@ -13,6 +13,7 @@ class SingleDinosaurContainer extends Component {
   }
 
   componentDidMount(){
+    console.log("this props id", this.props.id);
     let request = new Request()
     const url = 'http://localhost:8080/api/dinosaurs/' + this.props.id + '?projection=embedPaddock';
     request.get(url).then((data) => {
@@ -21,15 +22,18 @@ class SingleDinosaurContainer extends Component {
   }
 
   handleDelete(id){
+
     const request = new Request();
-    const url = '/api/dinosaurs/' + id;
+    const url = '/dinosaurs/' + id;
     request.delete(url).then(() => {
       window.location = '/dinosaurs'
     })
   }
 
   handleEdit(id){
-    window.location = '/dinosaurs/edit/' + id
+    console.log("edit this props id", id);
+
+    window.location = '/dinosaurs/edit/' + this.props.id
   }
 
 

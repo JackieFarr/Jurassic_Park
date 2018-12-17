@@ -14,7 +14,7 @@ class SinglePaddockContainer extends Component {
 
   componentDidMount(){
     let request = new Request()
-    const url = '/api/paddocks/' + this.props.id + '?projection=embedDinosaurs';
+    const url = 'http://localhost:8080/api/paddocks/' + this.props.id + '?projection=embedDinosaurs';
     request.get(url).then((data) => {
       this.setState({paddock: data})
     })
@@ -22,7 +22,7 @@ class SinglePaddockContainer extends Component {
 
   handleDelete(id){
     const request = new Request();
-    const url = '/api/paddocks/' + id;
+    const url = 'http://localhost:8080/api/paddocks/' + id;
     request.delete(url).then(() => {
       window.location = '/paddocks'
     })
@@ -40,8 +40,8 @@ class SinglePaddockContainer extends Component {
     return (
       <div className="component">
        <Paddock dinosaur = {this.state.paddock._embedded.dinosaur}
-       paddock = {this.state.dinodaur} />
-       <PaddockDetails paddock = {this.state.paddock}
+       paddock = {this.state.dinosaur} />
+       <PaddockDetails paddock = {this.state.paddock.name}
        handleDelete = {this.handleDelete}
        handleEdit={this.handleEdit}/>
      </div>
