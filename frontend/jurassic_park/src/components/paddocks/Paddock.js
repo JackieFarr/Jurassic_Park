@@ -6,6 +6,7 @@ const Paddock = (props) => {
     return null;
   }
 
+
   return (
     <React.Fragment>
         <Link to = {"/paddocks/" + props.paddock.id} className="name">

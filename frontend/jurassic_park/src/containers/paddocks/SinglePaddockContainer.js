@@ -25,18 +25,21 @@ class SinglePaddockContainer extends Component {
 
   render(){
     console.log("this.state.paddock", this.state.paddock);
-    if(!this.state.paddock){
+    if(!this.state.paddock && !this.state.dinosaurs){
       return null;
     }
+
     return (
       <div className="component">
 
       <Paddock dinosaur = {this.state.paddock._embedded.dinosaurs}
-      paddock = {this.state.paddock} />
+      paddock = {this.state.paddock}/>
 
        <PaddockDetail
        paddock = {this.state.paddock}
-       handleEdit={this.handleEdit}/>
+       handleEdit={this.handleEdit}
+       dinosaurs={this.state.paddock._embedded.dinosaurs}
+       />
      </div>
     )
   }

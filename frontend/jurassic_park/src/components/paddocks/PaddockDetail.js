@@ -6,6 +6,13 @@ const PaddockDetail = (props) => { console.log("paddock detail props",props);
     props.handleEdit(props.paddock.id)
   }
 
+  if(!props.dinosaurs){
+    return null;
+  }
+  const dinosaurs = props.dinosaurs.map((dinosaur, index) => {
+    return <li key = {index}>{dinosaur.name}</li>
+  })
+
   return (
     <React.Fragment>
     <div className="detail-list">
@@ -13,7 +20,10 @@ const PaddockDetail = (props) => { console.log("paddock detail props",props);
     <h1>{props.paddock.name} </h1>
     <p>Capacity: {props.paddock.capacity}</p>
     <p>PaddockType: {props.paddock.paddockType}</p>
-    <p>Dinosaurs: {props.paddock._embedded.dinosaurs.name}</p>
+    <p>Dinosaurs:</p>
+    <ul>
+      {dinosaurs}
+    </ul>
 
     <button className="edit-button" onClick={onEdit}>Edit Paddock</button>
     </div>
