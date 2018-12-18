@@ -14,7 +14,7 @@ class SinglePaddockContainer extends Component {
 
   componentDidMount(){
     let request = new Request()
-    const url = 'http://localhost:8080/api/paddocks/' + this.props.id;
+    const url = '/api/paddocks/' + this.props.id + '?projection=embedDinosaur';
     request.get(url).then((data) => {
       this.setState({paddock: data})
     })
@@ -38,14 +38,15 @@ class SinglePaddockContainer extends Component {
     }
     return (
       <div className="component">
+
        <Paddock dinosaur = {this.state.paddock._embedded.dinosaur}
-       paddock = {this.state.dinosaur} />
+       paddock = {this.state.paddock} />
+
        <PaddockDetail paddock = {this.state.paddock}
        handleDelete = {this.handleDelete}
        handleEdit={this.handleEdit}/>
      </div>
     )
-
   }
 }
 

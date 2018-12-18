@@ -11,22 +11,23 @@ class DinosaurEditFormContainer extends Component {
 
   componentDidMount(){
     const request = new Request();
-    request.get("http://localhost:8080/api/paddocks").then((paddocks) => {
+    request.get("/api/paddocks").then((paddocks) => {
       this.setState({paddocks: paddocks._embedded.paddocks})
     });
-    request.get("http://localhost:8080/api/dinosaurs/" + this.props.id).then((dinosaur) => {
+
+    request.get("/api/dinosaurs/" + this.props.id).then((dinosaur) => {
       this.setState({dinosaur: dinosaur})
     });
 
-    request.get("http://localhost:8080/api/dinosaurs").then((dinosaurs) => {
+    request.get("/api/dinosaurs").then((dinosaurs) => {
       this.setState({dinosaurs: dinosaurs._embedded.dinosaurs})
     });
   }
 
   handleDinosaurEdit(dinosaur){
     const request = new Request();
-    request.patch('http://localhost:8080/api/dinosaurs/' + this.props.id, dinosaur).then(() => {
-      window.location = '/dinosaurs/' + this.props.id
+    request.patch('/api/dinosaurs/' + this.props.id, dinosaur).then(() => {
+      // window.location = '/dinosaurs/' + this.props.id
     })
   }
 
@@ -40,7 +41,6 @@ class DinosaurEditFormContainer extends Component {
     dinosaur={this.state.dinosaur}
     handleDinosaurEdit= {this.handleDinosaurEdit}
     />
-
   }
 }
 

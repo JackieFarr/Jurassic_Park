@@ -12,7 +12,7 @@ const Paddock = (props) => {
         <Link to = {"/paddocks/" + props.paddock.id} className="name">
           {props.paddock.name}
         </Link>
-      
+
 
     </React.Fragment>
   )

@@ -1175,8 +1175,8 @@ function (_Component) {
       });
     }
   }, {
-    key: "handlePirateEdit",
-    value: function handlePirateEdit(dinosaur) {
+    key: "handleDinosaurEdit",
+    value: function handleDinosaurEdit(dinosaur) {
       var _this3 = this;
 
       var request = new _helpers_request__WEBPACK_IMPORTED_MODULE_7__["default"]();

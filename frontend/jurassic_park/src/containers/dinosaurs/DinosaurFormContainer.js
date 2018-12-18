@@ -12,15 +12,20 @@ class DinosaurFormContainer extends Component {
 
   componentDidMount(){
     const request = new Request();
-    request.get("http://localhost:8080/api/paddocks").then((data) => {
+    request.get("/api/paddocks").then((data) => {
       this.setState({paddocks: data._embedded.paddocks})
+    })
+
+    request.get("/api/dinosaurs").then((data) => {
+      this.setState({dinosaurs: data._embedded.dinosaurs})
     })
   }
 
   handleDinosaurPost(dinosaur){
     const request = new Request();
-    request.post('http://localhost:8080/api/dinosaurs', dinosaur).then(() => {
+    request.post('/api/dinosaurs', dinosaur).then(() => {
       window.location = '/dinosaurs'
+
     })
   }
 

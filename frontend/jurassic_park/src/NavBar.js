@@ -8,7 +8,6 @@ const NavBar = (props) => {
     <header className="topNav">
     <h2 className="tagline"> Life finds a way . . . </h2>
     <h2 className="visitor-count">Current Visitors : 2 , 6 4 5 </h2>
-    <img src ="images/jurassic-park-logo.png" height="200" alt="logo" className="center"/>
 
     <ul>
     <li className="navLink">

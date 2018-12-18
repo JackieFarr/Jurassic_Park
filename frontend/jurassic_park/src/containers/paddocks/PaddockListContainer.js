@@ -11,7 +11,7 @@ class PaddockListContainer extends Component {
 
   componentDidMount(){
     let request = new Request()
-    request.get('http://localhost:8080/api/paddocks').then((data) => {
+    request.get('/api/paddocks').then((data) => {
       this.setState({paddocks: data._embedded.paddocks})
     })
   }

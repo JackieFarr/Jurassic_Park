@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from './NavBar.js';
-import './css/App.css'
-import './css/main.css'
+import './App.css'
+import './main.css'
 
 import DinosaurListContainer from './containers/dinosaurs/DinosaurListContainer';
 import SingleDinosaurContainer from './containers/dinosaurs/SingleDinosaurContainer';

@@ -1,5 +1,6 @@
 import React from 'react';
 import Paddock from './Paddock.js';
+import {Link} from 'react-router-dom';
 
 
 const PaddockList = (props) => {
@@ -15,7 +16,7 @@ const PaddockList = (props) => {
 
 	return (
 		<React.Fragment>
-		<button>Add Paddock</button>
+		<button><Link to="/paddocks/new">Add Paddock</Link></button>
 
 		<ul className="component-list">
 	    {paddocks}

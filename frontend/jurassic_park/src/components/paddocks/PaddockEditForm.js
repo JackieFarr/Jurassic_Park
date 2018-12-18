@@ -7,14 +7,13 @@ class PaddockEditForm extends Component {
       name: props.paddock.name,
       capacity: props.paddock.capacity,
       paddockType: props.paddock.paddockType,
-      dinosaurs: props.paddock._embedded.dinosaur._links.self.href.replace("{?projection}", "")
+      dinosaurs: props.paddock._embedded.dinosaurs
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
  handleSubmit(event){
     event.preventDefault();
-    console.log(this.state);
     const paddock = {
         "name": this.state.name,
         "capacity": this.state.capacity,
@@ -28,7 +27,11 @@ class PaddockEditForm extends Component {
 render(){
 
      const dinosaurOptions = this.props.dinosaurs.map((dinosaur, index) => {
-      return <option key={index} value={dinosaur._links.self.href}>{dinosaur.species}</option>
+      return <option key={index} value={dinosaur._links.self.href}>{dinosaur.speciesType}</option>
+    })
+
+    const paddockTypeOptions = this.props.paddocks.map((paddock, index) => {
+      return <option key={index} value={paddock._links.self.href}>{paddock.paddockType}</option>
     })
 
 
@@ -36,9 +39,15 @@ render(){
     <div>
       <form onSubmit={this.handleSubmit}>
         <input type="text" value = {this.state.name} name="name" onChange={e => this.setState({ name: e.target.value })}/>
+
         <input type="number" value = {this.state.capacity} name="capacity" onChange={e => this.setState({ capacity: e.target.value })}/>
-        <select name="text" onChange={e => this.setState({ paddockType: e.target.value })}>
+
+        <select name="species" onChange={e => this.setState({ speciesType: e.target.value })}>
           {dinosaurOptions}
+        </select>
+
+        <select name="text" onChange={e => this.setState({ paddockType: e.target.value })}>
+          {paddockTypeOptions}
         </select>
 
         <button type="submit">Save</button>
