@@ -1,6 +1,6 @@
-/* body { */
-  /* background-image: url("dino1.jpg");
-
+/* body {
+  background-image: url("dino2.jpg");
+} */ 
 
 /* .App {
   text-align: center;
@@ -34,4 +34,4 @@
   to {
     transform: rotate(360deg);
   }
-} */
+}

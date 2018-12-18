@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Paddock from '../../components/paddocks/Paddock.js';
-import PaddockDetail from '../../components/paddocks/Paddock.js';
+import PaddockDetail from '../../components/paddocks/PaddockDetail.js';
 
 import Request from '../../helpers/request.js';
 
@@ -8,7 +8,6 @@ class SinglePaddockContainer extends Component {
   constructor(props){
     super(props);
     this.state = {paddock: null}
-    this.handleDelete = this.handleDelete.bind(this)
     this.handleEdit= this.handleEdit.bind(this)
   }
 
@@ -16,15 +15,7 @@ class SinglePaddockContainer extends Component {
     let request = new Request()
     const url = '/api/paddocks/' + this.props.id + '?projection=embedDinosaur';
     request.get(url).then((data) => {
-      this.setState({paddock: data})
-    })
-  }
-
-  handleDelete(id){
-    const request = new Request();
-    const url = '/paddocks/' + id;
-    request.delete(url).then(() => {
-      window.location = '/paddocks'
+      this.setState({paddock: data});
     })
   }
 
@@ -33,17 +24,18 @@ class SinglePaddockContainer extends Component {
   }
 
   render(){
+    console.log("this.state.paddock", this.state.paddock);
     if(!this.state.paddock){
       return null;
     }
     return (
       <div className="component">
 
-       <Paddock dinosaur = {this.state.paddock._embedded.dinosaur}
-       paddock = {this.state.paddock} />
+      <Paddock dinosaur = {this.state.paddock._embedded.dinosaurs}
+      paddock = {this.state.paddock} />
 
-       <PaddockDetail paddock = {this.state.paddock}
-       handleDelete = {this.handleDelete}
+       <PaddockDetail
+       paddock = {this.state.paddock}
        handleEdit={this.handleEdit}/>
      </div>
     )

@@ -10,17 +10,17 @@ class DinosaurListContainer extends Component {
   }
 
   componentDidMount(){
-    console.log("this.state", this.state);
+    // console.log("this.state", this.state);
     let request = new Request()
     request.get('/api/dinosaurs').then((data) => {
       this.setState({dinosaurs: data._embedded.dinosaurs})
-      console.log("data._embedded.dinosaurs", data._embedded.dinosaurs);
+      // console.log("data._embedded.dinosaurs", data._embedded.dinosaurs);
 
     })
   }
 
   render(){
-    console.log("dino state", this.state.dinosaur);
+    // console.log("dino state", this.state.dinosaur);
 
     return (
      <DinosaurList dinosaurs = {this.state.dinosaurs}

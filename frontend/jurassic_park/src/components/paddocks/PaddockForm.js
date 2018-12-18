@@ -7,8 +7,8 @@ const PaddockForm = (props) => {
     const paddock = {
         "name": event.target.name.value,
         "capacity": event.target.capacity.value,
-        "paddockType": event.target.paddockType.value,
-        "dinosaurs": event.target.dinosaurs.value,
+        "paddockType": event.target.paddockType,
+        "dinosaurs": event.target.dinosaurs,
       }
     props.handlePaddockPost(paddock)
   }

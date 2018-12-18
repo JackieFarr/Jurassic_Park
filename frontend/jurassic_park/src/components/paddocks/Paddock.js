@@ -2,8 +2,7 @@ import React  from 'react';
 import {Link} from 'react-router-dom';
 
 const Paddock = (props) => {
-
-  if(!props.paddock && !props.dinosaur){
+  if(!props.dinosaur && !props.paddock ){
     return null;
   }
 
@@ -12,8 +11,6 @@ const Paddock = (props) => {
         <Link to = {"/paddocks/" + props.paddock.id} className="name">
           {props.paddock.name}
         </Link>
-
-
     </React.Fragment>
   )
 }

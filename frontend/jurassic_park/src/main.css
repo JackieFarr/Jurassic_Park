@@ -1,50 +1,57 @@
 body {
-  background-color: white;
+  /* background-image: url("dino2.jpg"); */
+  text-decoration: none;
+  background-color: black;
+  font-family: "PHOSPHATE";
 }
 
-/* .topNav {
+.topNav {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
   background-color: black;
-} */
+}
 
 .background-img {
   background-repeat: no-repeat;
   width: auto;
   height: auto;
-
 }
 
 .line-break {
   /* margin: 25px 0; */
   height: 1px;
-  /* padding-bottom: 15px; */
+  padding-bottom: 15px;
   border-bottom: red 5px solid;
+}
+
+.topNav ul {
+  /* display: inline-block; */
+  overflow: hidden;
+  list-style-type: none;
+  margin: 20px;
+  text-align: center;
 }
 
 .topNav li {
   font-size: 20px;
-  float: left;
+  padding-right: 20px;
   text-align: center;
-  margin-left: 100px;
-  border: 1px solid red;
-  border-radius: 15px;
-}
-
-.topNav ul {
+  float: none;
   display: inline-block;
-  overflow: hidden;
-  list-style-type: none;
-  margin: 5px;
-  text-align: center;
+  color: white;
 }
 
 .topNav a {
-    display: block;
+    display: inline;
     color: white;
-    text-align: center;
+    /* text-align: center; */
     text-decoration: none;
-    padding: 3px;
+    padding: 15px;
+    margin: 20px;
     font-family: 'PHOSPHATE';
-    color: black;
+    color: white;
+    float: none;
 }
 
 /* Change the color of links on hover */
@@ -56,7 +63,7 @@ li a:hover {
 
 /* Add a color to the active/current link */
 .topnav li.active {
-  color: black;
+  color: white;
   background-color: white;
   border: 1px solid white;
   /* border-radius: 15px; */
@@ -65,14 +72,14 @@ li a:hover {
 .tagline {
   float: left;
   font-family: 'PHOSPHATE';
-  color: black;
+  color: white;
   font-size: 30px;
 }
 
 .visitor-count {
   float: right;
   font-family: 'PHOSPHATE';
-  color: black;
+  color: white;
   font-size: 30px;
 }
 
@@ -80,4 +87,84 @@ li a:hover {
   display: block;
    margin-left: auto;
    margin-right: auto;
+}
+
+.component-list {
+  color: white;
+  text-decoration: none;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  list-style-image: url("dino-icon.png");
+  list-style-position: inherit;
+  font-size: 20px;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.component-list li {
+  align-items: center;
+  padding-right: 80px;
+  padding bottom: 30px;
+}
+
+.component-list a {
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  text-align: center;
+}
+
+.add-button {
+  background-color: red;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.add-button a{
+  color: white;
+  text-decoration: none;
+}
+
+.add-button:hover {
+  background-color: grey;
+}
+
+.detail-list {
+  color: white;
+  font-size: 20px;
+}
+
+.edit-button {
+  background-color: red;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.edit-button a{
+  color: white;
+  text-decoration: none;
+}
+
+.edit-button:hover {
+  background-color: grey;
 }

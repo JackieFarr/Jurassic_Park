@@ -1,11 +1,6 @@
 import React  from 'react';
-import {Link} from 'react-router-dom';
 
-const PaddockDetail = (props) => {
-
-  const onDelete = () => {
-    props.handleDelete(props.paddock.id);
-  }
+const PaddockDetail = (props) => { console.log("paddock detail props",props);
 
   const onEdit = () => {
     props.handleEdit(props.paddock.id)
@@ -13,12 +8,15 @@ const PaddockDetail = (props) => {
 
   return (
     <React.Fragment>
-    <h1> {props.paddock.name} </h1>
+    <div className="detail-list">
+
+    <h1>{props.paddock.name} </h1>
     <p>Capacity: {props.paddock.capacity}</p>
     <p>PaddockType: {props.paddock.paddockType}</p>
+    <p>Dinosaurs: {props.paddock._embedded.dinosaurs.name}</p>
 
-    <button onClick={onDelete}>Delete Paddock</button>
-    <button onClick={onEdit}>Edit Paddock</button>
+    <button className="edit-button" onClick={onEdit}>Edit Paddock</button>
+    </div>
     </React.Fragment>
   )
 }

@@ -2,8 +2,7 @@ import React from 'react';
 import Paddock from './Paddock.js';
 import {Link} from 'react-router-dom';
 
-
-const PaddockList = (props) => {
+const PaddockList = (props) => { console.log("paddocklist props", props.paddocks);
 	const paddocks = props.paddocks.map((paddock) => {
 		 	return (
 				<li key={paddock.id} className="component-item">
@@ -16,7 +15,7 @@ const PaddockList = (props) => {
 
 	return (
 		<React.Fragment>
-		<button><Link to="/paddocks/new">Add Paddock</Link></button>
+		<button className="add-button"><Link to="/paddocks/new">Add Paddock</Link></button>
 
 		<ul className="component-list">
 	    {paddocks}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from './NavBar.js';
-import './App.css'
+// import './App.css'
 import './main.css'
 
 import DinosaurListContainer from './containers/dinosaurs/DinosaurListContainer';

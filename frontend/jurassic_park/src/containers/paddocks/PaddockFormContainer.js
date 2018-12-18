@@ -6,7 +6,7 @@ import PaddockForm from '../../components/paddocks/PaddockForm'
 class PaddockFormContainer extends Component {
   constructor(props){
     super(props);
-    this.state = {dinosaurs: []};
+    this.state = {dinosaurs: [], paddocks:[]};
     this.handlePaddockPost = this.handlePaddockPost.bind(this);
   }
 

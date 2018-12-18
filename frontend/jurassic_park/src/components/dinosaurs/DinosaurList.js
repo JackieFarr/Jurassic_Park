@@ -3,6 +3,8 @@ import Dinosaur from './Dinosaur.js';
 import {Link} from 'react-router-dom';
 
 const DinosaurList = (props) => {
+	 console.log("dinolist props", props.dinosaurs);
+
 	const dinosaurs = props.dinosaurs.map((dinosaur) => {
 		 	return (
 				<li key={dinosaur.id} className="component-item">
@@ -15,8 +17,7 @@ const DinosaurList = (props) => {
 
 	return (
 		<React.Fragment>
-		<button><Link to="/dinosaurs/new">Add Dinosaur</Link></button>
-
+		<button className="add-button" ><Link to="/dinosaurs/new">Add Dinosaur </Link></button>
 		<ul className="component-list">
 	    {dinosaurs}
 	  </ul>
