@@ -5,6 +5,7 @@ body {
   font-family: "PHOSPHATE";
 }
 
+
 .page-title {
   color: white;
   text-align: center;
@@ -199,14 +200,6 @@ li a:hover {
   background-color: grey;
 }
 
-form {
-  /* justify-content: center; */
-  /* display: inline-block; */
-  /* align: center;
-  align-content: center; */
-
-}
-
 input[type=text] {
   width: 50%;
   padding: 12px 20px;
@@ -227,8 +220,6 @@ input[type=number] {
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 15px;
-
-
 }
 
 Select{
@@ -240,6 +231,23 @@ Select{
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 15px;
+}
 
+.employees li {
+  color: white;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 3fr;
+  list-style-position: inherit;
+  font-size: 20px;
+  align-items: center;
+  padding-bottom: 100px;
+  /* margin-left: 50px; */
 
+}
+
+.employees ul {
+  align-items: center;
+  /* padding-right: 20px; */
+  padding bottom: 30px;
 }

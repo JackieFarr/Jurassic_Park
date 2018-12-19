@@ -14,6 +14,8 @@ import SinglePaddockContainer from './containers/paddocks/SinglePaddockContainer
 import PaddockFormContainer from './containers/paddocks/PaddockFormContainer';
 import PaddockEditFormContainer from './containers/paddocks/PaddockEditFormContainer';
 
+import EmployeeListContainer from './containers/employee/EmployeeListContainer'
+
 class App extends Component {
   render() {
     return (
@@ -44,7 +46,8 @@ class App extends Component {
           <Route exact path="/paddocks/:id" render = {(props) =>{
             const id = props.match.params.id;
             return <SinglePaddockContainer id = {id} />
-            }}
+          }} />
+            <Route exact path ='/employees' component={EmployeeListContainer}/>
           />
             </Switch>
           </React.Fragment>

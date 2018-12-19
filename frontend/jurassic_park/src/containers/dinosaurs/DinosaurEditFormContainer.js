@@ -27,7 +27,7 @@ class DinosaurEditFormContainer extends Component {
   handleDinosaurEdit(dinosaur){
     const request = new Request();
     request.patch('/api/dinosaurs/' + this.props.id, dinosaur).then(() => {
-      // window.location = '/dinosaurs/' + this.props.id
+      window.location = '/dinosaurs/' + this.props.id
     })
   }
 

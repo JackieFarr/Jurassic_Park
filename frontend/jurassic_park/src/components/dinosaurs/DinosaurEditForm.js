@@ -42,7 +42,9 @@ render(){
 
   return (
     <div>
-      <form onSubmit={this.handleSubmit}>
+    <h1 className="page-title"> Update dinosaur details</h1>
+
+      <form onSubmit={this.handleSubmit} align="center">
 
       <input type="text" value = {this.state.name} name="name" onChange={e => this.setState({ name: e.target.value })}/>
 
@@ -65,7 +67,7 @@ render(){
         {paddockOptions}
         </select>
 
-        <button type="submit">Save</button>
+        <button className="save-button" type="submit">Save</button>
       </form>
     </div>
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Paddock from '../../components/paddocks/Paddock.js';
+// import Paddock from '../../components/paddocks/Paddock.js';
 import PaddockDetail from '../../components/paddocks/PaddockDetail.js';
 
 import Request from '../../helpers/request.js';
@@ -9,6 +9,7 @@ class SinglePaddockContainer extends Component {
     super(props);
     this.state = {paddock: null}
     this.handleEdit= this.handleEdit.bind(this)
+    this.getDinosaursInPaddock = this.getDinosaursInPaddock.bind(this)
   }
 
   componentDidMount(){
@@ -23,22 +24,25 @@ class SinglePaddockContainer extends Component {
     window.location = '/paddocks/edit/' + this.props.id
   }
 
+  getDinosaursInPaddock() {
+    let dinosaurs = null;
+    if (this.state.paddock._embedded) {
+      dinosaurs = this.state.paddock._embedded.dinosaurs
+    }
+    return dinosaurs
+  }
+
   render(){
-    console.log("this.state.paddock", this.state.paddock);
     if(!this.state.paddock && !this.state.dinosaurs){
       return null;
     }
-
     return (
       <div className="component">
-
-      <Paddock dinosaur = {this.state.paddock._embedded.dinosaurs}
-      paddock = {this.state.paddock}/>
 
        <PaddockDetail
        paddock = {this.state.paddock}
        handleEdit={this.handleEdit}
-       dinosaurs={this.state.paddock._embedded.dinosaurs}
+       dinosaurs={this.getDinosaursInPaddock()}
        />
      </div>
     )

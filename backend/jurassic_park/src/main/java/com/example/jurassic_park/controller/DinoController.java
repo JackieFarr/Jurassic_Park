@@ -21,7 +21,7 @@ public class DinoController {
     @Autowired
     PaddockRepository paddockRepository;
 
-    @GetMapping(value = "/paddock{paddock}")
+    @GetMapping(value = "/paddocks/{paddock}")
     public List<Dinosaur> getAllDinosForPaddock(@PathVariable String paddock){
         return dinosaurRepository.getAllDinosForPaddock(paddock);
     }

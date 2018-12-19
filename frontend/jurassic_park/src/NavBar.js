@@ -10,7 +10,7 @@ const NavBar = (props) => {
     <h2 className="visitor-count">Current Visitors : 2 , 6 4 5 </h2>
     <div>
     <a href="http://localhost:3000/">
-    <img src ="images/jurassic-park-logo.png" height="200" alt="logo" className="center"/>
+    <img src ={require("./images/jurassic-park-logo.png")} height="200" alt="logo" className="center"/>
     </a>
     </div>
     <ul>
@@ -24,7 +24,7 @@ const NavBar = (props) => {
     <Link to="/visitors">Visitors</Link>
     </li>
     <li className="navLink">
-    <Link to="/staff">Staff</Link>
+    <Link to="/employees">Staff</Link>
     </li>
     </ul>
     <div className="line-break"></div>

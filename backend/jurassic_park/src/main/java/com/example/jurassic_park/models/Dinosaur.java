@@ -1,6 +1,7 @@
 package com.example.jurassic_park.models;
 
 import com.example.jurassic_park.enums.DinoType;
+import com.example.jurassic_park.enums.SpeciesType;
 import com.example.jurassic_park.models.Paddock;
 
 import javax.persistence.*;
@@ -13,8 +14,11 @@ public class Dinosaur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "species")
-    private String species;
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "speciesType")
+    private SpeciesType speciesType;
 
     @Column(name = "weight")
     private int weight;
@@ -22,15 +26,16 @@ public class Dinosaur {
     @Column(name="height")
     private int height;
 
-    @Column(name="Type")
+    @Column(name="dinoType")
     private DinoType dinoType;
 
     @ManyToOne
     @JoinColumn(name="paddock_id", nullable = false)
     private Paddock paddock;
 
-    public Dinosaur(String species, int weight, int height, DinoType dinoType, Paddock paddock) {
-        this.species = species;
+    public Dinosaur(String name, SpeciesType speciesType, int weight, int height, DinoType dinoType, Paddock paddock) {
+        this.name = name;
+        this.speciesType = speciesType;
         this.weight = weight;
         this.height = height;
         this.dinoType = dinoType;
@@ -40,12 +45,24 @@ public class Dinosaur {
     public Dinosaur() {
     }
 
-    public Long getId() {
-        return id;
+    public SpeciesType getSpeciesType() {
+        return speciesType;
     }
 
-    public String getSpecies() {
-        return species;
+    public void setSpeciesType(SpeciesType speciesType) {
+        this.speciesType = speciesType;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public int getWeight() {
@@ -72,9 +89,10 @@ public class Dinosaur {
         this.paddock = paddock;
     }
 
-    public void setSpecies(String species) {
-        this.species = species;
+    public String getPaddockName(Paddock paddock){
+        return paddock.name;
     }
+
 
     public void setWeight(int weight) {
         this.weight = weight;

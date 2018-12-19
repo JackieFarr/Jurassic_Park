@@ -11,10 +11,17 @@ const DinosaurForm = (props) => {
         "height": event.target.height.value,
         "weight": event.target.weight.value,
         "dinoType": event.target.dinoType.value,
-        "paddock": event.target.paddock.value,
+        "paddock": [...event.target.paddock.options].filter((option) => {
+          return option.selected
+        }).map((option) => {
+          return option.value
+        })
       }
     props.handleDinosaurPost(dinosaur)
   }
+       const paddockOptions = props.paddocks.map((paddock, index) => {
+        return <option key={index} value={paddock._links.self.href}>{paddock.name}</option>
+      })
 
       return (
         <div>
@@ -35,24 +42,26 @@ const DinosaurForm = (props) => {
               <option value="VELOCIRAPTOR">Velociraptor</option>
               <option value="PTERODACTYL">Pterodactyl</option>
             </select>
+
               <input type="number" placeholder="Height" name="height"/>
               <input type="number" placeholder="Weight" name="weight"/>
+
             <select name="dinoType">
               <option value="CARNIVORE">Carnivore</option>
               <option value="HERBIVORE">Herbivore</option>
               <option value="AQUATIC">Aquatic</option>
               <option value="FLYING">Flying</option>
+              </select>
+
+            <select name="paddock" >
+              {paddockOptions}
             </select>
-              <select name="paddock">
-              <option value="/api/paddocks/2">Hammond Hill</option>
-              <option value="/api/paddocks/4">Alan's Aviary</option>
-              <option value="/api/paddocks/3">Lake Laura</option>
-              <option value="/api/paddocks/1">Goldblum Green</option>
-            </select>
+
             <button className="save-button" type="submit">Save</button>
           </form>
         </div>
     )
 }
+
 
 export default DinosaurForm;

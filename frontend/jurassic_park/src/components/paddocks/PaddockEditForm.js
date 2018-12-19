@@ -28,7 +28,9 @@ render(){
 
   return (
     <div>
-      <form onSubmit={this.handleSubmit}>
+    <h1 className="page-title"> Update paddock details</h1>
+
+      <form onSubmit={this.handleSubmit} align="center">
         <input type="text" value = {this.state.name} name="name" onChange={e => this.setState({ name: e.target.value })}/>
 
         <input type="number" value = {this.state.capacity} name="capacity" onChange={e => this.setState({ capacity: e.target.value })}/>
@@ -39,7 +41,7 @@ render(){
         <option value="BIRDCAGE">Birdcage</option>
         </select>
 
-        <button type="submit">Save</button>
+        <button className="save-button" type="submit">Save</button>
       </form>
     </div>
 

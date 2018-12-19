@@ -2,6 +2,7 @@ package com.example.jurassic_park.models;
 
 import com.example.jurassic_park.enums.PaddockType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class Paddock {
     private Long id;
 
     @Column(name="name")
-    private String name;
+    protected String name;
 
     @Column(name="capacity")
     private int capacity;
@@ -24,7 +25,7 @@ public class Paddock {
     @Column(name="paddock_type")
     private PaddockType paddockType;
 
-    @JsonIgnore
+    @JsonIgnoreProperties("paddocks")
     @Column
     @OneToMany(mappedBy = "paddock", fetch=FetchType.LAZY)
     private List<Dinosaur> dinosaurs;
