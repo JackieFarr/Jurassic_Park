@@ -18,8 +18,10 @@ const DinosaurForm = (props) => {
 
       return (
         <div>
-          <form onSubmit={handleSubmit}>
+        <h1 className="page-title"> Add a new dinosaur to the park</h1>
+          <form onSubmit={handleSubmit} align="center">
             <input type="text" placeholder="Name" name="name"/>
+
             <select name="speciesType">
               <option value="TYRANNOSAURUS_REX">Tyrannosaurus Rex</option>
               <option value="DIPLODOCUS">Diplodocus</option>
@@ -47,7 +49,7 @@ const DinosaurForm = (props) => {
               <option value="/api/paddocks/3">Lake Laura</option>
               <option value="/api/paddocks/1">Goldblum Green</option>
             </select>
-            <button type="submit">Save</button>
+            <button className="save-button" type="submit">Save</button>
           </form>
         </div>
     )

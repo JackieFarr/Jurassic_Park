@@ -18,8 +18,8 @@ const PaddockDetail = (props) => { console.log("paddock detail props",props);
     <div className="detail-list">
 
     <h1>{props.paddock.name} </h1>
-    <p>Capacity: {props.paddock.capacity}</p>
-    <p>PaddockType: {props.paddock.paddockType}</p>
+    <p>Capacity: {props.paddock.capacity} dinosaurs</p>
+    <p>Paddock Type: {props.paddock.paddockType}</p>
     <p>Dinosaurs:</p>
     <ul>
       {dinosaurs}

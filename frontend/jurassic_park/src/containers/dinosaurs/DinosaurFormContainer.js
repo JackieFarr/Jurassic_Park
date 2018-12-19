@@ -11,6 +11,7 @@ class DinosaurFormContainer extends Component {
   }
 
   componentDidMount(){
+    console.log("this.props", this.props);
     const request = new Request();
     request.get("/api/paddocks").then((data) => {
       this.setState({paddocks: data._embedded.paddocks})

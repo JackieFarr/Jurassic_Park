@@ -5,6 +5,11 @@ body {
   font-family: "PHOSPHATE";
 }
 
+.page-title {
+  color: white;
+  text-align: center;
+}
+
 .topNav {
   padding-left: 20px;
   padding-right: 20px;
@@ -167,4 +172,74 @@ li a:hover {
 
 .edit-button:hover {
   background-color: grey;
+}
+
+.save-button {
+  background-color: red;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.save-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.save-button:hover {
+  background-color: grey;
+}
+
+form {
+  /* justify-content: center; */
+  /* display: inline-block; */
+  /* align: center;
+  align-content: center; */
+
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+input[type=number] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+
+
+}
+
+Select{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+
+
 }

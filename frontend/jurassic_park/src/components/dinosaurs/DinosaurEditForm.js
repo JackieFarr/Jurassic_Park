@@ -55,7 +55,10 @@ render(){
         <input type="number" value = {this.state.weight} name="weight" onChange={e => this.setState({ weight: e.target.value })}/>
 
         <select name="dinoType" onChange={e => this.setState({ dinosaur: e.target.value })}>
-        {dinoTypeOptions}
+        <option value="CARNIVORE">Carnivore</option>
+        <option value="HERBIVORE">Herbivore</option>
+        <option value="AQUATIC">Aquatic</option>
+        <option value="FLYING">Flying</option>
         </select>
 
         <select name="paddock" onChange={e => this.setState({ paddock: e.target.value })}>

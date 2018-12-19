@@ -24,7 +24,7 @@ class PaddockEditFormContainer extends Component {
   }
 
   render(){
-    if(!this.state.dinosaurs || !this.state.paddock){
+    if(!this.state.paddock){
       return <h1>loading</h1>;
     }
     return <PaddockEditForm
