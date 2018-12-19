@@ -35,7 +35,7 @@ render(){
 
         <input type="number" value = {this.state.capacity} name="capacity" onChange={e => this.setState({ capacity: e.target.value })}/>
 
-        <select name="paddockType" onChange={e => this.setState({ paddockType: e.target.value })}>
+        <select name="paddockType" defaultValue={this.paddockType} onChange={e => this.setState({ paddockType: e.target.value })}>
         <option value="LAND">Land</option>
         <option value="LAKE">Lake</option>
         <option value="BIRDCAGE">Birdcage</option>

@@ -16,6 +16,8 @@ import PaddockEditFormContainer from './containers/paddocks/PaddockEditFormConta
 
 import EmployeeListContainer from './containers/employee/EmployeeListContainer'
 
+import Homepage from './containers/Homepage.js'
+
 class App extends Component {
   render() {
     return (
@@ -23,6 +25,7 @@ class App extends Component {
         <React.Fragment>
           <NavBar />
           <Switch>
+          <Route exact path = '/' component={Homepage}/>
           <Route exact path = '/dinosaurs' component={DinosaurListContainer}/>
           <Route exact path = '/dinosaurs/new' component={DinosaurFormContainer}/>
           <Route exact path = '/dinosaurs/edit/:id' render = {(props) =>{

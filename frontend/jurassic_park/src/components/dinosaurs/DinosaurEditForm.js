@@ -63,7 +63,7 @@ render(){
         <option value="FLYING">Flying</option>
         </select>
 
-        <select name="paddock" onChange={e => this.setState({ paddock: e.target.value })}>
+        <select name="paddock" defaultValue="paddock" onChange={e => this.setState({ paddock: e.target.value })}>
         {paddockOptions}
         </select>
 

@@ -17,7 +17,7 @@ const PaddockList = (props) => { console.log("paddocklist props", props.paddocks
 		<React.Fragment>
 		<button className="add-button"><Link to="/paddocks/new">Add Paddock</Link></button>
 
-		<ul className="component-list">
+		<ul className="component-pad-list">
 	    {paddocks}
 	  </ul>
 		</React.Fragment>

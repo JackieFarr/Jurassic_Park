@@ -18,13 +18,11 @@ const Employee = (props) => {
     <div className="employees">
     <ul>
       <li>
-      <img src={props.employee.imageURL} width="300" height="auto"/>
-
-        <h2>Name: {props.employee.name}</h2>
-
-        <img src={require("./foot.png")} height="auto" width="50px" alt="logo"/>
-
-        <h3>Job title: {props.employee.jobTitle} </h3>
+      <img src={props.employee.imageURL} width="300" height="auto" list-style-type="none"/>
+        <p list-style-type="none">
+        Name: {props.employee.name}
+        <br></br>
+        Job title: {props.employee.jobTitle}</p>
 
       </li>
       </ul>

@@ -17,7 +17,7 @@ const DinosaurList = (props) => {
 
 	return (
 		<React.Fragment>
-		<button className="add-button" ><Link to="/dinosaurs/new">Add Dinosaur </Link></button>
+		<button className="add-button"><Link to="/dinosaurs/new">Add Dinosaur </Link></button>
 		<ul className="component-list">
 	    {dinosaurs}
 	  </ul>

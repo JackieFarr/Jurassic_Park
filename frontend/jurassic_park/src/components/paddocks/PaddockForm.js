@@ -26,7 +26,7 @@ const PaddockForm = (props) => {
             <select name="paddockType">
             <option value="LAND">Land</option>
             <option value="LAKE">Lake</option>
-            <option value="BIRDCAGE">BIRDCAGE</option>
+            <option value="BIRDCAGE">Birdcage</option>
             </select>
             <button className="save-button" type="submit">Save</button>
           </form>

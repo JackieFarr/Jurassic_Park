@@ -18,7 +18,7 @@ const PaddockDetail = (props) => { console.log("paddock detail props",props.padd
 
   return (
     <React.Fragment>
-    <div className="detail-list">
+    <div className="detail-list" >
 
     <h1>{props.paddock.name} </h1>
     <p>Capacity: {props.paddock.capacity} dinosaurs</p>

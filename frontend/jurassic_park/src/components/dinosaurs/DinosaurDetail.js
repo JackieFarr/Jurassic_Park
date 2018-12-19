@@ -11,7 +11,7 @@ const DinosaurDetail = (props) => {
   return (
 
     <React.Fragment>
-    <div className="detail-list">
+    <div className="detail-list" align="left">
     <p>Name: {props.dinosaur.name}</p>
     <p>Species: {props.dinosaur.speciesType}</p>
     <p>Weight: {props.dinosaur.weight} pounds</p>

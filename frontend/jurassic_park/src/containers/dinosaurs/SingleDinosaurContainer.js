@@ -30,8 +30,7 @@ class SingleDinosaurContainer extends Component {
     return (
       <div className="component">
 
-       <Dinosaur paddock = {this.state.dinosaur._embedded.paddock}
-       dinosaur = {this.state.dinosaur} />
+    
 
        <DinosaurDetail dinosaur = {this.state.dinosaur}
        handleEdit={this.handleEdit}/>

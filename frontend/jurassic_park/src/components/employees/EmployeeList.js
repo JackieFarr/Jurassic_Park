@@ -7,11 +7,11 @@ const EmployeeList = (props) => {
 
   const employees = props.employees.map((employee, index) => {
     return(
-      <li key={employee.id} className="component-item">
+      <p key={employee.id} className="component-item" list-style-type="none">
       <div className = "component">
         <Employee employee={employee}/>
         </div>
-      </li>
+      </p>
     );
   });
 
@@ -19,9 +19,9 @@ const EmployeeList = (props) => {
     <React.Fragment>
 
     <button className="add-button"><Link to="/employees/new">Add staff member </Link></button>
-    <ul className="employee-list">
+    <p className="employee-list" list-style-type="none">
       {employees}
-    </ul>
+    </p>
     </React.Fragment>
 
   );

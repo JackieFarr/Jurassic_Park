@@ -6,11 +6,10 @@ import './main.css';
 const NavBar = (props) => {
   return (
     <header className="topNav">
-    <h2 className="tagline"> Life finds a way . . . </h2>
     <h2 className="visitor-count">Current Visitors : 2 , 6 4 5 </h2>
     <div>
     <a href="http://localhost:3000/">
-    <img src ={require("./images/jurassic-park-logo.png")} height="200" alt="logo" className="center"/>
+    <img src ={require("./images/jurassic-park-logo.png")} height="200" alt="logo" align="left"/>
     </a>
     </div>
     <ul>
